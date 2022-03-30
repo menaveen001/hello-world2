@@ -26,5 +26,16 @@ func main() {
 		c.String(http.StatusOK, "Hello %s", name)
 	})
 
+	router.POST("/user/:name/*action", func(c *gin.Context) {
+		b := c.FullPath() == "/user/:name/*action"
+		c.String(http.StatusOK, "%t", b)
+
+	})
+
+	router.GET("/user/groups", func(c *gin.Context) {
+
+		c.String(http.StatusOK, "The available groups are[..]")
+	})
+
 	router.Run(":8080")
 }

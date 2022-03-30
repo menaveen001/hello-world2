@@ -34,7 +34,7 @@ func main() {
 
 	router.GET("/user/groups", func(c *gin.Context) {
 
-		c.String(http.StatusOK, "The available groups are[....]")
+		c.String(http.StatusOK, "The available groups are[..]")
 	})
 
 	router.Run(":8080")

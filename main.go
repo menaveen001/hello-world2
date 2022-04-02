@@ -22,8 +22,9 @@ func main() {
 	router := gin.Default()
 
 	router.GET("/user/:name", func(c *gin.Context) {
-		name := c.Param("name")
-		c.String(http.StatusOK, "Hello %s", name)
+		name := c.Param("num1 ,num2")
+		sum := (num1 + num2)
+		c.String(http.StatusOK, "Hello %s", name, sum)
 	})
 
 	router.POST("/user/:name/*action", func(c *gin.Context) {
